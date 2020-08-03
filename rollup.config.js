@@ -11,7 +11,7 @@ export default [
     input: 'src/index.js',
     output: [
       {
-        name: 'xtools',
+        name: 'btools',
         file: pkg.browser,
         format: 'umd',
       },
