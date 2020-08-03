@@ -1,3 +1,4 @@
 ### btools
 
-前端常用工具库
+better common tools
+更好用的常用工具库
