@@ -1,19 +1,32 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import { eslint } from 'rollup-plugin-eslint';
+import uglify from 'rollup-plugin-uglify';
+import babel from 'rollup-plugin-babel';
 import pkg from './package.json';
 
+const ENV = process.env.NODE_ENV;
 export default [
   // browser-friendly UMD build
   {
     input: 'src/index.js',
     output: {
-      name: 'howLongUntilLunch',
+      name: 'index',
       file: pkg.browser,
       format: 'umd',
     },
     plugins: [
-      resolve(), // so Rollup can find `ms`
-      commonjs(), // so Rollup can convert `ms` to an ES module
+      resolve(),
+      commonjs(),
+      eslint({
+        include: ['src/**'],
+        exclude: ['node_modules/**'],
+      }),
+      babel({
+        exclude: 'node_modules/**',
+        runtimeHelpers: true,
+      }),
+      ENV === 'production' && uglify(),
     ],
   },
 
@@ -25,7 +38,6 @@ export default [
   // `file` and `format` for each target)
   {
     input: 'src/index.js',
-    external: ['ms'],
     output: [
       { file: pkg.main, format: 'cjs' },
       { file: pkg.module, format: 'es' },

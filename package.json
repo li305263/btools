@@ -1,13 +1,27 @@
 {
   "name": "xtools",
+  "author": "li305263",
   "version": "0.0.1",
+  "homepage": "https://github.com/li305263/xtools",
+  "description": "common tools utils",
   "main": "dist/xtools.cjs.js",
   "module": "dist/xtools.esm.js",
   "browser": "dist/xtools.umd.js",
+  "keywords": [
+    "tools",
+    "javascript",
+    "library",
+    "utils"
+  ],
   "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.4.0",
-    "rollup": "^2.23.0"
+    "rollup": "^2.23.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-uglify": "^6.0.4"
   },
   "scripts": {
     "build": "rollup -c",

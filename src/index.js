@@ -7,7 +7,6 @@ typeArr.forEach(e => {
 
 /**
  * @description: 判断类型
- * @Date: 2020-08-03 23:14:23
  * @param any
  * @return string
  */
