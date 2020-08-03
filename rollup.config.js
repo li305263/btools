@@ -1,20 +1,27 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { eslint } from 'rollup-plugin-eslint';
-import uglify from 'rollup-plugin-uglify';
+import { uglify } from 'rollup-plugin-uglify';
 import babel from 'rollup-plugin-babel';
 import pkg from './package.json';
 
-const ENV = process.env.NODE_ENV;
 export default [
   // browser-friendly UMD build
   {
     input: 'src/index.js',
-    output: {
-      name: 'index',
-      file: pkg.browser,
-      format: 'umd',
-    },
+    output: [
+      {
+        name: 'xtools',
+        file: pkg.browser,
+        format: 'umd',
+      },
+      {
+        file: pkg.browserMin,
+        format: 'umd',
+        name: 'version',
+        plugins: [uglify()],
+      },
+    ],
     plugins: [
       resolve(),
       commonjs(),
@@ -26,7 +33,6 @@ export default [
         exclude: 'node_modules/**',
         runtimeHelpers: true,
       }),
-      ENV === 'production' && uglify(),
     ],
   },
 
