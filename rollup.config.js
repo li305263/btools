@@ -2,13 +2,14 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { eslint } from 'rollup-plugin-eslint';
 import { uglify } from 'rollup-plugin-uglify';
+import ts from 'rollup-plugin-typescript2';
 import babel from 'rollup-plugin-babel';
 import pkg from './package.json';
 
 export default [
   // browser-friendly UMD build
   {
-    input: 'src/index.js',
+    input: 'src/index.ts',
     output: [
       {
         name: 'btools',
@@ -29,9 +30,11 @@ export default [
         include: ['src/**'],
         exclude: ['node_modules/**'],
       }),
+      ts(),
       babel({
         exclude: 'node_modules/**',
         runtimeHelpers: true,
+        extensions: ['.js', '.ts'],
       }),
     ],
   },
@@ -43,10 +46,11 @@ export default [
   // an array for the `output` option, where we can specify
   // `file` and `format` for each target)
   {
-    input: 'src/index.js',
+    input: 'src/index.ts',
     output: [
       { file: pkg.main, format: 'cjs' },
       { file: pkg.module, format: 'es' },
     ],
+    plugins: [ts()],
   },
 ];

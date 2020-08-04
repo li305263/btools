@@ -1,4 +1,4 @@
-const class2Type = {},
+const class2Type: any = {},
   typeArr = ['Boolean', 'Number', 'String', 'Function', 'Array', 'Date', 'RegExp', 'Object', 'Error'];
 
 typeArr.forEach(e => {
@@ -7,9 +7,8 @@ typeArr.forEach(e => {
 
 /**
  * @description: 判断类型
- * @param any
- * @return string
  */
-export const isType = obj => {
+
+export const isType = (obj: any): String => {
   return obj == null ? String(obj) : class2Type[Object.prototype.toString.call(obj)];
 };
