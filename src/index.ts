@@ -1,14 +1,7 @@
-const class2Type: any = {},
-  typeArr = ['Boolean', 'Number', 'String', 'Function', 'Array', 'Date', 'RegExp', 'Object', 'Error'];
+export { default as getCookie } from './cookie/getCookie';
+export { default as removeCookie } from './cookie/removeCookie';
+export { default as setCookie } from './cookie/setCookie';
 
-typeArr.forEach(e => {
-  class2Type[`[object ${e}]`] = e.toLowerCase();
-});
+export { default as toType } from './code/toType';
 
-/**
- * @description: 判断类型
- */
-
-export const isType = (obj: any): String => {
-  return obj == null ? String(obj) : class2Type[Object.prototype.toString.call(obj)];
-};
+export { default as dateFormat } from './date/dateFormat';
