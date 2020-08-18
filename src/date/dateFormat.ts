@@ -2,6 +2,8 @@
  * @description: 日期格式化
  */
 export default function dateFormat(date: any, format: string = 'YYYY-MM-DD'): string {
+  if (!date) date = '';
+
   const $date = new Date(date),
     year = $date.getFullYear(),
     month = $date.getMonth() + 1,

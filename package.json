@@ -1,7 +1,7 @@
 {
   "name": "btools",
   "author": "li305263",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "homepage": "https://github.com/li305263/btools",
   "description": "common tools utils",
   "main": "dist/btools.cjs.js",
@@ -41,5 +41,6 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "types": "dist/index.d.ts"
 }
