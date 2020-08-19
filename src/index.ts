@@ -8,6 +8,10 @@ export { default as getSystem } from './code/getSystem';
 export { default as dateFormat } from './date/dateFormat';
 
 export { default as eventBus } from './function/eventBus';
+export { default as debounce } from './function/debounce';
+export { default as throttle } from './function/throttle';
+
+export { default as clone } from './object/clone';
 
 export * from './storage/storage';
 
