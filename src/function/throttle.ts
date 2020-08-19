@@ -9,10 +9,10 @@
  * @return {function}
  */
 interface Options {
-  leading: undefined | false;
-  trailing: undefined | false;
+  leading?: undefined | false;
+  trailing?: undefined | false;
 }
-function throttle(fn: Function, wait: number, options: Options): Function {
+export default function throttle(fn: Function, wait: number, options: Options = {}): Function {
   let timeout: any,
     ctx: void | null,
     args: IArguments | null,
