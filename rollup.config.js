@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import { eslint } from 'rollup-plugin-eslint';
 import { uglify } from 'rollup-plugin-uglify';
 import ts from 'rollup-plugin-typescript2';
+import dts from 'rollup-plugin-dts';
 import babel from 'rollup-plugin-babel';
 import pkg from './package.json';
 
@@ -52,5 +53,10 @@ export default [
       { file: pkg.module, format: 'es' },
     ],
     plugins: [ts()],
+  },
+  {
+    input: 'src/index.ts',
+    output: [{ file: 'dist/index.d.ts', format: 'es' }],
+    plugins: [dts()],
   },
 ];

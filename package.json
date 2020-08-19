@@ -6,7 +6,7 @@
   "description": "common tools utils",
   "main": "dist/btools.cjs.js",
   "module": "dist/btools.esm.js",
-  "browser": "dist/btools.umd.js",
+  "browser": "dist/btools.js",
   "browserMin": "dist/btools.min.js",
   "keywords": [
     "tools",
@@ -27,17 +27,20 @@
     "jest": "^26.2.2",
     "rollup": "^2.23.0",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-dts": "^1.4.10",
     "rollup-plugin-eslint": "^7.0.0",
     "rollup-plugin-typescript2": "^0.27.1",
     "rollup-plugin-uglify": "^6.0.4",
     "ts-jest": "^26.1.4",
+    "typedoc": "^0.18.0",
     "typescript": "^3.8.3"
   },
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "test": "jest",
-    "pretest": "npm run build"
+    "pretest": "npm run build",
+    "doc": "typedoc --out doc"
   },
   "files": [
     "dist"
