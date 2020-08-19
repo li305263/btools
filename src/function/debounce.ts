@@ -5,7 +5,7 @@
  * @param {boolean} 是否立即执行
  * @return {any}
  */
-function debounce(fn: Function, wait: number, immediate: boolean): any {
+export default function debounce(fn: Function, wait: number, immediate: boolean): any {
   let timeout: any, result: any;
   const _debounce = function (this: void) {
     if (timeout) clearTimeout(timeout);
