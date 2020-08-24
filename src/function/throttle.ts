@@ -1,3 +1,7 @@
+interface Options {
+  leading?: undefined | false;
+  trailing?: undefined | false;
+}
 /**
  * @description: 节流 如果持续触发事件，每隔一段时间，只执行一次事件
  * @param {function} 回调
@@ -8,10 +12,6 @@
  *                  默认为第一次触发马上执行函数，最后一次触发也可以执行一次函数
  * @return {function}
  */
-interface Options {
-  leading?: undefined | false;
-  trailing?: undefined | false;
-}
 export default function throttle(fn: Function, wait: number, options: Options = {}): Function {
   let timeout: any,
     ctx: void | null,
