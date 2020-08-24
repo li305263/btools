@@ -1,5 +1,5 @@
 /**
- * 获取系统信息
+ * @description: 获取系统信息
  * @return {object}
  */
 export default function getSystem(): object {

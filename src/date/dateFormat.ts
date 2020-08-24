@@ -1,5 +1,8 @@
 /**
  * @description: 日期格式化
+ * @param {any} 日期
+ * @param {string} 格式化
+ * @return {string} 返回格式话后的日期字符串
  */
 export default function dateFormat(date: any, format: string = 'YYYY-MM-DD'): string {
   if (!date) date = '';

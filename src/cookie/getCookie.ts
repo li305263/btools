@@ -1,5 +1,6 @@
 /**
  * @description: 根据name读取cookie
+ * @param {string}
  */
 export default function getCookie(name: string) {
   var arr = document.cookie.replace(/\s/g, '').split(';');

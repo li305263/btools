@@ -1,10 +1,4 @@
-import toType from './../code/toType';
-/**
- * @description: 深拷贝,常用类型拷贝
- * @param {any} 克隆目标
- * @return {any} 返回新目标
- */
-
+import toType from './../function/toType';
 interface CloneTarget {
   [key: string]: any;
   [index: number]: any;
@@ -13,6 +7,11 @@ interface RegExpExecArray extends Array<string> {
   index: number;
   input: string;
 }
+/**
+ * @description: 深拷贝,常用类型拷贝
+ * @param {any} 克隆目标
+ * @return {any} 返回新目标
+ */
 export default function clone(target: any, map = new WeakMap()): any {
   if (typeof target !== 'object' || target === null) return target;
 

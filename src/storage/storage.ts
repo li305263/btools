@@ -1,10 +1,9 @@
-import toType from './../code/toType';
+import toType from './../function/toType';
 /**
  * @description: 字符串转换成默认类型
- * @param {string}
- * @return {any}
+ * @param {string} 要转换的值
+ * @return {any} 返回转换后的值
  */
-
 export function stringParse(val: any): any {
   try {
     return JSON.parse(val);

@@ -1,5 +1,6 @@
 /**
  * @description 根据name删除cookie
+ * @param {string}
  */
 import setCookie from './setCookie';
 
