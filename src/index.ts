@@ -9,8 +9,13 @@ export { default as getSystem } from './function/getSystem';
 export { default as eventBus } from './function/eventBus';
 export { default as debounce } from './function/debounce';
 export { default as throttle } from './function/throttle';
+export { default as isEmpty } from './function/isEmpty';
 
 export { default as clone } from './object/clone';
+
+export { default as isEmail } from './regexp/isEmail';
+export { default as isIdCard } from './regexp/isIdCard';
+export { default as isPhone } from './regexp/isPhone';
 
 export * from './storage/storage';
 
