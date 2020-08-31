@@ -39,8 +39,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "test": "jest",
-    "pretest": "npm run build",
+    "test": "jest --coverage",
     "doc": "typedoc"
   },
   "files": [
