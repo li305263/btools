@@ -1,6 +1,6 @@
 import { toType } from '../../src/index';
 
-test('测试', () => {
+test('#toType()', () => {
   expect(toType(null)).toEqual('null');
   expect(toType(undefined)).toEqual('undefined');
   expect(toType(function () {})).toEqual('function');
