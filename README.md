@@ -1,6 +1,8 @@
 # btools
 
 [![NPM version][npm-image]][npm-url]
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/li305263/btools/CI)
+[![codecov](https://codecov.io/gh/li305263/btools/branch/master/graph/badge.svg)](https://codecov.io/gh/li305263/btools)
 [![License][license-image]][npm-url]
 
 [npm-image]: https://img.shields.io/npm/v/btools.svg
