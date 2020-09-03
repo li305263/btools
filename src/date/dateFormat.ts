@@ -52,4 +52,3 @@ export default function dateFormat(date: any, format: string = 'YYYY-MM-DD'): st
     }
   });
 }
-console.log(dateFormat(1599062949000, 'YY-M-D hh:m:s A'));

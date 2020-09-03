@@ -7,7 +7,7 @@ interface Param {
  * ?name=li&age=28
  * @return {object}  {name:"li",age:'28'}
  */
-export default function urlParams(param: string = location.search): object {
+export default function urlParams(param?: string): object {
   if (typeof param == 'string' && param.indexOf('?') > -1) {
     let str: any = decodeURIComponent(param.slice(1));
     const obj: Param = {};
