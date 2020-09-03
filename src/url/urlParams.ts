@@ -4,8 +4,8 @@ interface Param {
 /**
  * url参数转json
  * @param {string} param
- * ?name=li&age=128
- * @return {object}  {name:"；li",age:28}
+ * ?name=li&age=28
+ * @return {object}  {name:"li",age:'28'}
  */
 export default function urlParams(param: string = location.search): object {
   if (typeof param == 'string' && param.indexOf('?') > -1) {

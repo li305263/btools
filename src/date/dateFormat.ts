@@ -5,9 +5,7 @@
  * @return {string} 返回格式话后的日期字符串
  */
 export default function dateFormat(date: any, format: string = 'YYYY-MM-DD'): string {
-  if (!date) date = '';
-
-  const $date = new Date(date),
+  const $date = new Date(date || ''),
     year = $date.getFullYear(),
     month = $date.getMonth() + 1,
     day = $date.getDate(),
@@ -15,7 +13,7 @@ export default function dateFormat(date: any, format: string = 'YYYY-MM-DD'): st
     min = $date.getMinutes(),
     s = $date.getSeconds();
 
-  return format.replace(/^YYYY|YY|MM|M|DD|D|HH|H|hh|h|a|A|mm|m|ss|s$/g, match => {
+  return format.replace(/YYYY|YY|MM|M|DD|D|HH|H|hh|h|a|A|mm|m|ss|s/g, match => {
     switch (match) {
       case 'YY':
         return String(year).slice(-2);
@@ -54,3 +52,4 @@ export default function dateFormat(date: any, format: string = 'YYYY-MM-DD'): st
     }
   });
 }
+console.log(dateFormat(1599062949000, 'YY-M-D hh:m:s A'));
