@@ -13,8 +13,8 @@ export default function paramsUrl(param?: Param): string {
     for (let key in param) {
       if (typeof param[key] == 'object') {
         str += paramsUrl(param[key]) + '&';
-      } else {
-        if (param[key] !== undefined) str += key + '=' + param[key] + '&';
+      } else if (param[key] !== undefined) {
+        str += key + '=' + param[key] + '&';
       }
     }
     return str.slice(0, -1);
