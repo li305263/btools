@@ -1,3 +1,4 @@
+export { default as shuffle } from './array/shuffle';
 export { default as getCookie } from './cookie/getCookie';
 export { default as removeCookie } from './cookie/removeCookie';
 export { default as setCookie } from './cookie/setCookie';
@@ -10,6 +11,8 @@ export { default as eventBus } from './function/eventBus';
 export { default as debounce } from './function/debounce';
 export { default as throttle } from './function/throttle';
 export { default as isEmpty } from './function/isEmpty';
+
+export { default as random } from './number/random';
 
 export { default as clone } from './object/clone';
 
